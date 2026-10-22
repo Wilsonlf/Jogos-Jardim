@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b1l52pgb1oemx"]
+
+[ext_resource type="Script" uid="uid://mio3gjt46f8h" path="res://script/Jogador.gd" id="1_efdrn"]
+[ext_resource type="Texture2D" uid="uid://bqwefoparsxww" path="res://sprites/5 - Ant/Hurt (16 x 16).png" id="2_856u7"]
+[ext_resource type="Texture2D" uid="uid://d1pooevb13l3t" path="res://sprites/5 - Ant/Idle (16 x 16).png" id="3_25y8j"]
+[ext_resource type="Texture2D" uid="uid://btrioojk3cryo" path="res://sprites/5 - Ant/Run (16 x 16).png" id="4_lb55g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oavjw"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8bfv"]
+atlas = ExtResource("2_856u7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0cc7"]
+atlas = ExtResource("2_856u7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suk8d"]
+atlas = ExtResource("4_lb55g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd7al"]
+atlas = ExtResource("4_lb55g")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efdrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8bfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0cc7")
+}],
+"loop": 1,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25y8j")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suk8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd7al")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1546110039]
+script = ExtResource("1_efdrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603860825]
+shape = SubResource("CapsuleShape2D_oavjw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=732862142]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_efdrn")
+animation = &"walk"
