@@ -58,7 +58,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1546110039]
+[node name="Player" type="CharacterBody2D" unique_id=1546110039]
 script = ExtResource("1_efdrn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603860825]
@@ -67,4 +67,9 @@ shape = SubResource("CapsuleShape2D_oavjw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=732862142]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_efdrn")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=771234098]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
