@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://chhcv67ikngyy" path="res://sprites/carpa_voar.png" id="2_kb8s2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oavjw"]
-radius = 10.0
-height = 36.0
+radius = 7.5
+height = 27.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hitbox"]
-radius = 13.0
-height = 42.0
+radius = 9.75
+height = 31.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjcwo"]
 atlas = ExtResource("1_wyjsh")
@@ -285,7 +285,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oavjw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=64903003]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_f6gbi")
 animation = &"fly"
 autoplay = "fly"

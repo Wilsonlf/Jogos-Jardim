@@ -98,7 +98,7 @@ func take_damage(amount: int, source: Vector2) -> void:
 
 	health -= amount
 	health_changed.emit(health)
-	print("Player took damage! Health: %d/%d" % [health, max_health])
+	print("Jogador tomou dano! Vida: %d/%d" % [health, max_health])
 
 	if health <= 0:
 		die()
