@@ -3,9 +3,9 @@ extends Node2D
 @export var carp_scene: PackedScene
 @export var ground: TileMapLayer
 
-@export var initial_interval := 4.0
-@export var min_interval := 1.0
-@export var interval_decrease := 0.1
+@export var initial_interval := 8.0
+@export var min_interval := 3.0
+@export var interval_decrease := 0.05
 @export var max_carps := 15
 
 @export var spawn_distance := 280.0

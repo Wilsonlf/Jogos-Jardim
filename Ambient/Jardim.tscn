@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1l52pgb1oemx" path="res://Entities/jogador.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cf1fs5mjemym3" path="res://Entities/carpa.tscn" id="5_carp"]
 [ext_resource type="Script" uid="uid://crl131xiaddtk" path="res://script/Spawner.gd" id="6_spawner"]
+[ext_resource type="Script" path="res://script/HUD.gd" id="7_hud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpnlg"]
 texture = ExtResource("1_exo6e")
@@ -206,11 +207,11 @@ texture = ExtResource("1_exo6e")
 2:4/0 = 0
 3:4/0 = 0
 4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:4/0 = 0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:4/0 = 0
 8:4/0 = 0
 9:4/0 = 0
@@ -221,22 +222,22 @@ texture = ExtResource("1_exo6e")
 2:5/0 = 0
 3:5/0 = 0
 4:5/0 = 0
-4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:5/0 = 0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:5/0 = 0
-6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:5/0 = 0
 8:5/0 = 0
 9:5/0 = 0
 10:5/0 = 0
 11:5/0 = 0
 0:6/0 = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:6/0 = 0
 2:6/0 = 0
 3:6/0 = 0
-3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:6/0 = 0
 5:6/0 = 0
 6:6/0 = 0
@@ -246,9 +247,9 @@ texture = ExtResource("1_exo6e")
 10:6/0 = 0
 11:6/0 = 0
 0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:7/0 = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:7/0 = 0
 3:7/0 = 0
 4:7/0 = 0
@@ -313,6 +314,7 @@ texture = ExtResource("3_0q2ah")
 
 [sub_resource type="TileSet" id="TileSet_oavjw"]
 physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_cnnyc")
 sources/1 = SubResource("TileSetAtlasSource_85u3j")
 sources/2 = SubResource("TileSetAtlasSource_1em6b")
@@ -351,3 +353,6 @@ ground = NodePath("../Chao")
 
 [node name="Timer" type="Timer" parent="Spawner" unique_id=339201852]
 one_shot = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("7_hud")
