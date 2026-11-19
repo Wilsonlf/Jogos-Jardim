@@ -28,7 +28,7 @@ func _ready() -> void:
 	_setup_map_limits()
 	_enter_state(State.IDLE)
 
-
+## IA para estabelecer os limites do mapa
 func _setup_map_limits() -> void:
 	var ground := get_parent().get_node_or_null("Chao") as TileMapLayer
 	if ground == null:
@@ -125,6 +125,7 @@ func take_damage(amount: int, source: Vector2) -> void:
 		die()
 		return
 
+##Pedi ajuda para fazer o Knockback após dano
 	knockback = (global_position - source).normalized() * KNOCKBACK_FORCE
 	change_state(State.KNOCKBACK)
 	_become_invincible()

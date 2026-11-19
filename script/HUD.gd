@@ -44,7 +44,7 @@ func _build_ui() -> void:
 	message_label = _make_label(Control.PRESET_CENTER, 64)
 	message_label.visible = false
 
-
+## Usei IA para criação dos HUDs fixo na tela
 func _make_label(preset: int, size: int) -> Label:
 	var label := Label.new()
 	label.add_theme_font_size_override("font_size", size)

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1l52pgb1oemx" path="res://Entities/jogador.tscn" id="4_player"]
 [ext_resource type="PackedScene" uid="uid://cf1fs5mjemym3" path="res://Entities/carpa.tscn" id="5_carp"]
 [ext_resource type="Script" uid="uid://crl131xiaddtk" path="res://script/Spawner.gd" id="6_spawner"]
-[ext_resource type="Script" path="res://script/HUD.gd" id="7_hud"]
+[ext_resource type="Script" uid="uid://cy4y24mgxudlu" path="res://script/HUD.gd" id="7_hud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpnlg"]
 texture = ExtResource("1_exo6e")
@@ -354,5 +354,5 @@ ground = NodePath("../Chao")
 [node name="Timer" type="Timer" parent="Spawner" unique_id=339201852]
 one_shot = true
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=532149236]
 script = ExtResource("7_hud")

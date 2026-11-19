@@ -6,7 +6,7 @@ extends Node2D
 @export var initial_interval := 8.0
 @export var min_interval := 3.0
 @export var interval_decrease := 0.05
-@export var max_carps := 15
+@export var max_carps := 18
 
 @export var spawn_distance := 280.0
 @export var speed_increase := 1.0
@@ -30,7 +30,8 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start(interval)
 
-
+##Usei IA para criar o spawn de carpa pois não sabia como funcionava
+## o spawner e o timer
 func _on_timer_timeout() -> void:
 	carps = carps.filter(func(carp): return is_instance_valid(carp))
 	if carps.size() < max_carps:
